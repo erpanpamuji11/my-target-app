@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
 import 'package:my_terget_app/features/product/presentation/blocs/product/product_bloc.dart';
@@ -45,7 +46,7 @@ class ProductPage extends StatelessWidget {
           if (state.products.isEmpty) {
             return Center(
                 child: Text(
-              "Data Kosong",
+              ConstantText.dataEmpty,
               style: b1Bold(),
             ));
           }

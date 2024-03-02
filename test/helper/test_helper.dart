@@ -10,7 +10,7 @@ import 'package:my_terget_app/features/business/domain/repositories/business_rep
   BusinessDataSource,
 ], customMocks: [
   MockSpec<http.Client>(as: #MockHttpClient),
-  MockSpec<IOClient>(as: #MockIOClient)
+  MockSpec<IOClient>(as: #MockIOClient),
 ])
 
 void main() {}

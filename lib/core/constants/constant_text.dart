@@ -41,4 +41,5 @@ class ConstantText {
   static const String cancel = 'Cancel';
   static const String delete = 'Delete';
   static const String deleteTarget = 'Delete Target';
+  static const String dataEmpty = "Tidak ada target, klik '+'\nuntuk menambahkan";
 }
