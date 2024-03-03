@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/common/my_text_field.dart';
 import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
@@ -86,7 +87,7 @@ class _AddBusinessPageState extends State<AddBusinessPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-         ConstantText.addBusiness,
+          ConstantText.addBusiness,
           style: b1Bold(),
         ),
         centerTitle: true,
@@ -103,41 +104,20 @@ class _AddBusinessPageState extends State<AddBusinessPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _titleController,
-                style: b2Bold(),
-                maxLines: 4,
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterYourTarget,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none)),
+                hintText: ConstantText.enterYourTarget,
+                maxLine: 4,
               ),
               const Gap(12),
               Text(
-               ConstantText.strategy,
+                ConstantText.strategy,
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _strategyController,
-                style: b2Bold(),
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterStartegyTarget,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+                hintText: ConstantText.enterStartegyTarget,
               ),
               const Gap(12),
               Text(
@@ -145,23 +125,10 @@ class _AddBusinessPageState extends State<AddBusinessPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _modalController,
-                style: b2Bold(),
-                keyboardType: TextInputType.number,
-                
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterCapitalVenture,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none),
-                    prefixText: "Rp.",
-                    prefixStyle: b2Bold()),
+                hintText: ConstantText.enterCapitalVenture,
+                textInputType: TextInputType.number,
               ),
               const Gap(12),
               Row(

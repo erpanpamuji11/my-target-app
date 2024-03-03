@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/common/my_text_field.dart';
 import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
@@ -10,7 +11,8 @@ import 'package:my_terget_app/features/marketing/domain/entities/marketing.dart'
 import 'package:my_terget_app/features/marketing/presentation/blocs/marketing/marketing_bloc.dart';
 
 class EditMarketingPage extends StatefulWidget {
-  const EditMarketingPage({super.key, required this.marketing, required this.index});
+  const EditMarketingPage(
+      {super.key, required this.marketing, required this.index});
 
   final Marketing marketing;
   final int index;
@@ -63,25 +65,24 @@ class _EditMarketingPageState extends State<EditMarketingPage> {
   updateMarketing() {
     context.read<MarketingBloc>().add(
           OnUpdateMarketing(
-            MarketingModel(
-              _titleController.text,
-              _demografiController.text,
-              _targetController.text,
-              _startDate!,
-              _endDate!,
-              DateTime.now(),
-              _statusController.text,
-            ),
-            widget.index
-          ),
+              MarketingModel(
+                _titleController.text,
+                _demografiController.text,
+                _targetController.text,
+                _startDate!,
+                _endDate!,
+                DateTime.now(),
+                _statusController.text,
+              ),
+              widget.index),
         );
   }
 
-  deleteMarketing(){
+  deleteMarketing() {
     context.read<MarketingBloc>().add(OnDeleteMarketing(widget.index));
   }
 
-  getExtra(){
+  getExtra() {
     _titleController.text = widget.marketing.title;
     _demografiController.text = widget.marketing.demografi;
     _targetController.text = widget.marketing.target;
@@ -127,20 +128,10 @@ class _EditMarketingPageState extends State<EditMarketingPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _titleController,
-                style: b2Bold(),
-                maxLines: 4,
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterYourTarget,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none)),
+                hintText: ConstantText.enterYourTarget,
+                maxLine: 3,
               ),
               const Gap(12),
               Text(
@@ -148,20 +139,9 @@ class _EditMarketingPageState extends State<EditMarketingPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
-                controller: _demografiController,
-                style: b2Bold(),
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterDemographics,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+              MyTextField(
+                controller: _targetController,
+                hintText: ConstantText.enterProfitTarger,
               ),
               const Gap(12),
               Text(
@@ -173,7 +153,6 @@ class _EditMarketingPageState extends State<EditMarketingPage> {
                 controller: _targetController,
                 style: b2Bold(),
                 keyboardType: TextInputType.number,
-                
                 decoration: InputDecoration(
                     hintText: ConstantText.enterProfitTarger,
                     hintStyle: b2Reguler(),

@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:my_terget_app/features/business/data/models/business_model.dart';
+import 'package:my_terget_app/core/utils/hive_utils.dart';
 import 'package:my_terget_app/features/business/presentation/blocs/business/business_bloc.dart';
-import 'package:my_terget_app/features/marketing/data/models/marketing_model.dart';
 import 'package:my_terget_app/features/marketing/presentation/blocs/marketing/marketing_bloc.dart';
-import 'package:my_terget_app/features/product/data/models/product_model.dart';
 import 'package:my_terget_app/features/product/presentation/blocs/product/product_bloc.dart';
-import 'package:my_terget_app/features/profile/data/models/profile_model.dart';
 import 'package:my_terget_app/features/profile/presentation/blocs/profile/profile_bloc.dart';
 import 'package:my_terget_app/injection.dart';
-import 'package:my_terget_app/routes/app_routes.dart';
+import 'package:my_terget_app/core/routes/app_routes.dart';
 
 void main() async {
-  await Hive.initFlutter();
-  Hive.registerAdapter(ProductModelAdapter());
-  Hive.registerAdapter(BusinessModelAdapter());
-  Hive.registerAdapter(MarketingModelAdapter());
-  Hive.registerAdapter(ProfileModelAdapter());
+  await HiveUtils().setupHive();
   setupSl();
   runApp(const MyApp());
 }

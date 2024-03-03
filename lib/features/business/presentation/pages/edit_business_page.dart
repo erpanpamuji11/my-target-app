@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/common/my_text_field.dart';
 import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
@@ -67,26 +68,24 @@ class _EditBusinessPageState extends State<EditBusinessPage> {
   updateBusiness() {
     context.read<BusinessBloc>().add(
           OnUpdateBusiness(
-            BusinessModel(
-              _titleController.text,
-              _strategyController.text,
-              _modalController.text,
-              _startDate!,
-              _endDate!,
-              DateTime.now(),
-              _statusController.text,
-            ),
-            widget.index
-          ),
+              BusinessModel(
+                _titleController.text,
+                _strategyController.text,
+                _modalController.text,
+                _startDate!,
+                _endDate!,
+                DateTime.now(),
+                _statusController.text,
+              ),
+              widget.index),
         );
   }
 
-  deleteBusiness(){
+  deleteBusiness() {
     context.read<BusinessBloc>().add(OnDeleteBusiness(widget.index));
   }
 
-
-  getExtra(){
+  getExtra() {
     _titleController.text = widget.business.title;
     _strategyController.text = widget.business.strategi;
     _modalController.text = widget.business.modal;
@@ -133,20 +132,9 @@ class _EditBusinessPageState extends State<EditBusinessPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _titleController,
-                style: b2Bold(),
-                maxLines: 4,
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterYourTarget,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none)),
+                hintText: ConstantText.enterYourTarget,
               ),
               const Gap(12),
               Text(
@@ -154,20 +142,10 @@ class _EditBusinessPageState extends State<EditBusinessPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
-                controller: _strategyController,
-                style: b2Bold(),
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterStartegyTarget,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+              MyTextField(
+                controller: _modalController,
+                hintText: ConstantText.enterCapitalVenture,
+                textInputType: TextInputType.number,
               ),
               const Gap(12),
               Text(

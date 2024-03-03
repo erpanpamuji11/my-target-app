@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/common/my_text_field.dart';
 import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
@@ -103,20 +104,10 @@ class _AddMarketingPageState extends State<AddMarketingPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _titleController,
-                style: b2Bold(),
-                maxLines: 4,
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterYourTarget,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none)),
+                hintText: ConstantText.enterYourTarget,
+                maxLine: 3,
               ),
               const Gap(12),
               Text(
@@ -124,44 +115,19 @@ class _AddMarketingPageState extends State<AddMarketingPage> {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
-                controller: _demografiController,
-                style: b2Bold(),
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterDemographics,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
-              ),
+              MyTextField(
+                  controller: _demografiController,
+                  hintText: ConstantText.enterDemographics),
               const Gap(12),
               Text(
                 ConstantText.profitTarget,
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _targetController,
-                style: b2Bold(),
-                keyboardType: TextInputType.number,
-                
-                decoration: InputDecoration(
-                    hintText: ConstantText.enterProfitTarger,
-                    hintStyle: b2Reguler(),
-                    filled: true,
-                    fillColor: Colors.blue.withOpacity(0.2),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none),
-                    prefixText: "Rp.",
-                    prefixStyle: b2Bold()),
+                hintText: ConstantText.enterProfitTarger,
+                textInputType: TextInputType.number,
               ),
               const Gap(12),
               Row(

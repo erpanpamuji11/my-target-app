@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_terget_app/common/my_text_field.dart';
 import 'package:my_terget_app/core/constants/constant_text.dart';
 import 'package:my_terget_app/core/style/style_color.dart';
 import 'package:my_terget_app/core/style/style_text.dart';
@@ -46,20 +47,9 @@ class AddProfilePage extends StatelessWidget {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _nameController,
-                style: b2Bold(),
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterBusinessName,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+                hintText: ConstantText.enterBusinessName,
               ),
               const Gap(12),
               Text(
@@ -67,21 +57,9 @@ class AddProfilePage extends StatelessWidget {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _sectorController,
-                style: b2Bold(),
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterBusinessSector,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+                hintText: ConstantText.enterBusinessSector,
               ),
               const Gap(12),
               Text(
@@ -89,21 +67,9 @@ class AddProfilePage extends StatelessWidget {
                 style: b2Bold(),
               ),
               const Gap(4),
-              TextFormField(
+              MyTextField(
                 controller: _valueController,
-                style: b2Bold(),
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: ConstantText.enterBusinessValue,
-                  hintStyle: b2Reguler(),
-                  filled: true,
-                  fillColor: Colors.blue.withOpacity(0.2),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none),
-                ),
+                hintText: ConstantText.enterBusinessValue,
               ),
             ],
           ),
