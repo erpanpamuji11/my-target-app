@@ -1,16 +1,11 @@
 # my_terget_app
-
-A new Flutter project.
+- Clean Architecture
+- BloC State Management
+- Hive
+- TDD testing
+- CICD
 
 ## Getting Started
+![Screenshot_1709377607](https://github.com/erpanpamuji11/my-target-app/assets/99371814/d52d1f95-91ca-4e84-9316-5ad3dbb99962)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1709377626](https://github.com/erpanpamuji11/my-target-app/assets/99371814/ba9f9c9d-3968-4325-90f3-5d2f69ba1c8c)
